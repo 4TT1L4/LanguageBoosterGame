@@ -1,0 +1,131 @@
+﻿<UserControl x:Class="LanguageBoosterGame.Game"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:h="http://helix-toolkit.org/wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="1000"       
+             HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <ImageBrush x:Key="SmokeBrush" ImageSource="smoke.png"/>
+        <SolidColorBrush x:Key="ColorBrush" Color="Red"/>
+    </UserControl.Resources>
+    <Grid Name="GameGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+        <h:HelixViewport3D x:Name="view1" Camera="{h:PerspectiveCamera 0,-14.3, 16.8, 0, 16.3,-19.8}" ShowCameraInfo="False"  CameraMode="FixedPosition" ChangeFieldOfViewCursor="No" IsMoveEnabled="False" IsPanEnabled="False" IsManipulationEnabled="False" IsRotationEnabled="False" IsZoomEnabled="False" >
+            <h:SunLight/>
+            <!--<h:GridLinesVisual3D Width="13" Length="13" MinorDistance="0.2" MajorDistance="1" Thickness="0.02"/>-->
+            <ModelVisual3D x:Name="ship">
+                <h:ParticleSystem>
+                </h:ParticleSystem>
+                <ModelVisual3D.Transform>
+                    <Transform3DGroup>
+                        <ScaleTransform3D ScaleX="0.08" ScaleY="0.08" ScaleZ="0.08" />
+                        <TranslateTransform3D x:Name="ShipPosition"  OffsetX="0" OffsetY="-6"></TranslateTransform3D>
+                    </Transform3DGroup>
+                </ModelVisual3D.Transform>
+            </ModelVisual3D>
+        </h:HelixViewport3D>
+        <Grid Name="HudGrid">
+            <Grid.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                    <Storyboard >
+                        <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" BeginTime="00:00:00">
+                            <SplineThicknessKeyFrame KeyTime="00:00:00" Value="10,-100,10,10" />
+                            <SplineThicknessKeyFrame KeyTime="00:00:02" Value="10,10,10,10" />
+                        </ThicknessAnimationUsingKeyFrames>
+                    </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Grid.Triggers>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Margin="15" Grid.Column="0" >
+                <StackPanel.Resources>
+                    <LinearGradientBrush x:Key="GradBrush" StartPoint="1,0" EndPoint="0,0" >
+                        <GradientStopCollection>
+                            <GradientStop Color="DarkOrange" Offset="-0.3"  />
+                            <GradientStop  x:Name="GradientStop"  Color="#FF0000" Offset="0.5"/>
+                            <GradientStop Color="DarkOrange" Offset="1.3"/>
+                        </GradientStopCollection>
+                    </LinearGradientBrush>
+                </StackPanel.Resources>
+                <TextBlock Margin="5" FontSize="30" Foreground="{StaticResource GradBrush}" FontFamily="Transformers">Player:</TextBlock>
+                <TextBlock Margin="5" FontSize="30" Foreground="{StaticResource GradBrush}" FontFamily="Transformers" Name="PlayerName"></TextBlock>
+            </StackPanel>
+            <StackPanel Name="BigTextPanel" Grid.Column="1"  VerticalAlignment="Center" Visibility="Hidden">
+                <StackPanel.Resources>
+                    <LinearGradientBrush x:Key="GradBrush" StartPoint="1,0" EndPoint="0,0" >
+                        <GradientStopCollection>
+                            <GradientStop Color="DarkBlue" Offset="-0.3"  />
+                            <GradientStop Color="LightBlue" Offset="0.5"/>
+                            <GradientStop Color="DarkBlue" Offset="1.3"/>
+                        </GradientStopCollection>
+                    </LinearGradientBrush>
+                </StackPanel.Resources>
+                <TextBlock Name="BigText" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 -100" Height="1000" FontSize="100" Foreground="{StaticResource GradBrush}" FontFamily="Transformers">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="DarkBlue" Direction="300" BlurRadius="10" ShadowDepth="15">
+                        </DropShadowEffect>
+                    </TextBlock.Effect>
+                </TextBlock>
+            </StackPanel>
+            <StackPanel Name="QAPanel" Grid.Column="1"  VerticalAlignment="Center" Visibility="Hidden">
+                <StackPanel.Resources>
+                    <LinearGradientBrush x:Key="GradBrush" StartPoint="1,0" EndPoint="0,0" >
+                        <GradientStopCollection>
+                            <GradientStop Color="DarkBlue" Offset="-0.3"  />
+                            <GradientStop Color="LightBlue" Offset="0.5"/>
+                            <GradientStop Color="DarkBlue" Offset="1.3"/>
+                        </GradientStopCollection>
+                    </LinearGradientBrush>
+                    <LinearGradientBrush x:Key="GradBrush2" StartPoint="1,0" EndPoint="0,0" >
+                            <GradientStopCollection>
+                                <GradientStop Color="DarkRed" Offset="-0.3"  />
+                                <GradientStop Color="Orange" Offset="0.5"/>
+                                <GradientStop Color="DarkRed" Offset="1.3"/>
+                            </GradientStopCollection>
+                        </LinearGradientBrush>
+                </StackPanel.Resources>
+                <TextBlock Name="Question" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" FontSize="70" Foreground="{StaticResource GradBrush}" FontFamily="Transformers" Text="Question">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="DarkBlue" Direction="270" BlurRadius="6" ShadowDepth="10">
+                        </DropShadowEffect>
+                    </TextBlock.Effect>
+                </TextBlock>
+                <TextBlock Name="Answer" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" FontSize="50" Foreground="{StaticResource GradBrush}" FontFamily="Transformers" Text="{Binding this.AnswerTextBox.Text}">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="DarkBlue" Direction="270" BlurRadius="6" ShadowDepth="10">
+                        </DropShadowEffect>
+                    </TextBlock.Effect>
+                </TextBlock>
+                <TextBlock Name="AnswerHelper" Visibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" FontSize="50" Foreground="{StaticResource GradBrush2}" FontFamily="Transformers" Text="{Binding this.AnswerTextBox.Text}">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="DarkRed" Direction="270" BlurRadius="6" ShadowDepth="10">
+                        </DropShadowEffect>
+                    </TextBlock.Effect>
+                </TextBlock>
+                <TextBox Name="AnswerTextBox" Width="0" Height="0" PreviewKeyDown="AnswerTextBox_PreviewKeyDown"></TextBox>
+            </StackPanel>
+            <StackPanel Margin="15" Grid.Column="2" >
+                <StackPanel.Resources>
+                    <LinearGradientBrush x:Key="GradBrush" StartPoint="1,0" EndPoint="0,0" >
+                        <GradientStopCollection>
+                            <GradientStop Color="DarkOrange" Offset="-0.3"  />
+                            <GradientStop Color="#FF0000" Offset="0.5"/>
+                            <GradientStop Color="DarkOrange" Offset="1.3"/>
+                        </GradientStopCollection>
+                    </LinearGradientBrush>
+                </StackPanel.Resources>
+                <TextBlock Margin="5" FontSize="30" Foreground="{StaticResource GradBrush}" FontFamily="Transformers">Score:</TextBlock>
+                <TextBlock Margin="5" FontSize="30" Foreground="{StaticResource GradBrush}" HorizontalAlignment="Right" FontFamily="Transformers" Name="PlayerScore" Text="0"></TextBlock>
+                <TextBlock Margin="5" FontSize="30" Foreground="{StaticResource GradBrush}" FontFamily="Transformers">Ammo:</TextBlock>
+                <TextBlock Margin="5" FontSize="30" Foreground="{StaticResource GradBrush}" HorizontalAlignment="Right" FontFamily="Transformers" Name="Ammo" Text="0"></TextBlock>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

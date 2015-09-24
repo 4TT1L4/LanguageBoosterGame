@@ -1,0 +1,89 @@
+﻿<Window x:Class="LanguageBoosterGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525" WindowState="Maximized" WindowStyle="None" Background="Black" KeyDown="Window_KeyDown"
+        Name="MainWindowInstance">
+    <Grid Name="Main">
+        <Grid.Resources>
+        <!-- Style for AJAX-like wait spinners -->
+        <Style x:Key="WaitSpinnerStyle" TargetType="Control">
+            <Setter Property="Foreground" Value="#888" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Control">
+                        <Viewbox Visibility="{TemplateBinding Visibility}">
+                            <Canvas RenderTransformOrigin="0.5,0.5" Width="120" Height="120" >
+                                <Ellipse Width="21.835" Height="21.862" Canvas.Left="20.1696" Canvas.Top="9.76358" Stretch="Fill" Fill="{TemplateBinding Foreground}" Opacity="1.0"/>
+                                <Ellipse Width="20.835" Height="20.862" Canvas.Left="2.86816" Canvas.Top="29.9581" Stretch="Fill" Fill="{TemplateBinding Foreground}" Opacity="0.9"/>
+                                <Ellipse Width="19.835" Height="19.862" Canvas.Left="0.00001" Canvas.Top="57.9341" Stretch="Fill" Fill="{TemplateBinding Foreground}" Opacity="0.8"/>
+                                <Ellipse Width="17.835" Height="17.862" Canvas.Left="12.1203" Canvas.Top="83.3163" Stretch="Fill" Fill="{TemplateBinding Foreground}" Opacity="0.7"/>
+                                <Ellipse Width="16.835" Height="16.862" Canvas.Left="36.5459" Canvas.Top="98.1380" Stretch="Fill" Fill="{TemplateBinding Foreground}" Opacity="0.6"/>
+                                <Ellipse Width="14.835" Height="14.862" Canvas.Left="64.6723" Canvas.Top="96.8411" Stretch="Fill" Fill="{TemplateBinding Foreground}" Opacity="0.5"/>
+                                <Ellipse Width="13.835" Height="13.862" Canvas.Left="87.6176" Canvas.Top="81.2783" Stretch="Fill" Fill="{TemplateBinding Foreground}" Opacity="0.4"/>
+                                <Ellipse Width="12.835" Height="12.862" Canvas.Left="98.165"  Canvas.Top="54.4140" Stretch="Fill" Fill="{TemplateBinding Foreground}" Opacity="0.3"/>
+                                <Ellipse Width="11.835" Height="11.862" Canvas.Left="92.9838" Canvas.Top="26.9938" Stretch="Fill" Fill="{TemplateBinding Foreground}" Opacity="0.2"/>
+                                <Canvas.RenderTransform>
+                                    <RotateTransform x:Name="SpinnerRotate" Angle="0" />
+                                </Canvas.RenderTransform>
+                                <Canvas.Triggers>
+                                    <EventTrigger RoutedEvent="ContentControl.Loaded">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation
+                                            Storyboard.TargetName="SpinnerRotate"
+                                            Storyboard.TargetProperty="Angle"
+                                            From="0" To="360" Duration="0:0:01.3"
+                                            RepeatBehavior="Forever" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Canvas.Triggers>
+                            </Canvas>
+                        </Viewbox>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        </Grid.Resources>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Name="Content">
+
+        </StackPanel>
+        <!-- LOADING overlay (for async-load) -->
+        <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsHitTestVisible="True" 
+            Background="#40000000" CornerRadius="4"
+            Visibility="Visible" Name="LoaderBorder">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Name="Loader">
+                <Control Style="{StaticResource WaitSpinnerStyle}" Width="50" Foreground="White" />
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Loading..." FontWeight="Bold" Margin="0,5" FontSize="40" FontFamily="Transformers" FontStretch="ExtraExpanded">
+                    <TextBlock.Foreground>
+                        <LinearGradientBrush StartPoint="1,0" EndPoint="0,0" >
+                            <GradientStopCollection>
+                                <GradientStop Color="#EEEEEE" Offset="-0.3"  />
+                                <GradientStop  x:Name="GradientStop"  Color="#FF0000" Offset="0.5"/>
+                                <GradientStop Color="#EEEEEE" Offset="1.3"/>
+                            </GradientStopCollection>
+                        </LinearGradientBrush>
+                    </TextBlock.Foreground>
+                    <TextBlock.Triggers>
+                        <EventTrigger RoutedEvent="TextBlock.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="GradientStop"
+                                                         Storyboard.TargetProperty="Offset"
+                                                         From="0.0" To="1.0" Duration="0:0:2.5"
+                                                         AutoReverse="True"
+                                                         RepeatBehavior="Forever"
+                                                         />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </TextBlock.Triggers>
+                    <TextBlock.BitmapEffect>
+                        <DropShadowBitmapEffect>
+                        </DropShadowBitmapEffect>
+                    </TextBlock.BitmapEffect>
+                </TextBlock>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

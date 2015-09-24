@@ -1,0 +1,18 @@
+<Viewport3D xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Viewport3D.Camera>
+        <PerspectiveCamera FarPlaneDistance="100.000000" NearPlaneDistance="0.100000" UpDirection="0,1,0" LookDirection="0,0,-1" Position="0,0,0" FieldOfView="49.134343">
+            <PerspectiveCamera.Transform>
+                <Transform3DGroup>
+                    <RotateTransform3D>
+                        <RotateTransform3D.Rotation>
+                            <AxisAngleRotation3D Axis="0.879358,0.324991,0.348009" Angle="91.05689832920379"/>
+                            
+                        </RotateTransform3D.Rotation>
+                    </RotateTransform3D>
+                    <TranslateTransform3D OffsetX="6.4088325500488281" OffsetY="-8.971099853515625" OffsetZ="4.2730207443237305"/>
+                </Transform3DGroup>
+            </PerspectiveCamera.Transform>
+        </PerspectiveCamera>
+    </Viewport3D.Camera>
+   
+</Viewport3D>

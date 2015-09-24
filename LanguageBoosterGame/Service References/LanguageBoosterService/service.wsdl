@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="LanguageBoosterImplementation" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/LanguageBoosterService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="LanguageBooster_GetHighscores_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHighscores" />
+  </wsdl:message>
+  <wsdl:message name="LanguageBooster_GetHighscores_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHighscoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="LanguageBooster_SubmitScore_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitScore" />
+  </wsdl:message>
+  <wsdl:message name="LanguageBooster_SubmitScore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitScoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="LanguageBooster_CreatePlayer_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePlayer" />
+  </wsdl:message>
+  <wsdl:message name="LanguageBooster_CreatePlayer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePlayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="LanguageBooster_GetPlayerHighScore_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlayerHighScore" />
+  </wsdl:message>
+  <wsdl:message name="LanguageBooster_GetPlayerHighScore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlayerHighScoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="LanguageBooster_GetNextWord_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextWord" />
+  </wsdl:message>
+  <wsdl:message name="LanguageBooster_GetNextWord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextWordResponse" />
+  </wsdl:message>
+  <wsdl:message name="LanguageBooster_SubmitWord_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitWord" />
+  </wsdl:message>
+  <wsdl:message name="LanguageBooster_SubmitWord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitWordResponse" />
+  </wsdl:message>
+  <wsdl:message name="LanguageBooster_RemoveWord_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveWord" />
+  </wsdl:message>
+  <wsdl:message name="LanguageBooster_RemoveWord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveWordResponse" />
+  </wsdl:message>
+  <wsdl:message name="LanguageBooster_GetWords_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWords" />
+  </wsdl:message>
+  <wsdl:message name="LanguageBooster_GetWords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="LanguageBooster_GetWordCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWordCount" />
+  </wsdl:message>
+  <wsdl:message name="LanguageBooster_GetWordCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWordCountResponse" />
+  </wsdl:message>
+  <wsdl:portType name="LanguageBooster">
+    <wsdl:operation name="GetHighscores">
+      <wsdl:input wsaw:Action="http://tempuri.org/LanguageBooster/GetHighscores" message="tns:LanguageBooster_GetHighscores_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/LanguageBooster/GetHighscoresResponse" message="tns:LanguageBooster_GetHighscores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitScore">
+      <wsdl:input wsaw:Action="http://tempuri.org/LanguageBooster/SubmitScore" message="tns:LanguageBooster_SubmitScore_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/LanguageBooster/SubmitScoreResponse" message="tns:LanguageBooster_SubmitScore_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePlayer">
+      <wsdl:input wsaw:Action="http://tempuri.org/LanguageBooster/CreatePlayer" message="tns:LanguageBooster_CreatePlayer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/LanguageBooster/CreatePlayerResponse" message="tns:LanguageBooster_CreatePlayer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerHighScore">
+      <wsdl:input wsaw:Action="http://tempuri.org/LanguageBooster/GetPlayerHighScore" message="tns:LanguageBooster_GetPlayerHighScore_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/LanguageBooster/GetPlayerHighScoreResponse" message="tns:LanguageBooster_GetPlayerHighScore_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextWord">
+      <wsdl:input wsaw:Action="http://tempuri.org/LanguageBooster/GetNextWord" message="tns:LanguageBooster_GetNextWord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/LanguageBooster/GetNextWordResponse" message="tns:LanguageBooster_GetNextWord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitWord">
+      <wsdl:input wsaw:Action="http://tempuri.org/LanguageBooster/SubmitWord" message="tns:LanguageBooster_SubmitWord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/LanguageBooster/SubmitWordResponse" message="tns:LanguageBooster_SubmitWord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveWord">
+      <wsdl:input wsaw:Action="http://tempuri.org/LanguageBooster/RemoveWord" message="tns:LanguageBooster_RemoveWord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/LanguageBooster/RemoveWordResponse" message="tns:LanguageBooster_RemoveWord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWords">
+      <wsdl:input wsaw:Action="http://tempuri.org/LanguageBooster/GetWords" message="tns:LanguageBooster_GetWords_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/LanguageBooster/GetWordsResponse" message="tns:LanguageBooster_GetWords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWordCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/LanguageBooster/GetWordCount" message="tns:LanguageBooster_GetWordCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/LanguageBooster/GetWordCountResponse" message="tns:LanguageBooster_GetWordCount_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_LanguageBooster" type="tns:LanguageBooster">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetHighscores">
+      <soap:operation soapAction="http://tempuri.org/LanguageBooster/GetHighscores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitScore">
+      <soap:operation soapAction="http://tempuri.org/LanguageBooster/SubmitScore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePlayer">
+      <soap:operation soapAction="http://tempuri.org/LanguageBooster/CreatePlayer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerHighScore">
+      <soap:operation soapAction="http://tempuri.org/LanguageBooster/GetPlayerHighScore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextWord">
+      <soap:operation soapAction="http://tempuri.org/LanguageBooster/GetNextWord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitWord">
+      <soap:operation soapAction="http://tempuri.org/LanguageBooster/SubmitWord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveWord">
+      <soap:operation soapAction="http://tempuri.org/LanguageBooster/RemoveWord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWords">
+      <soap:operation soapAction="http://tempuri.org/LanguageBooster/GetWords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWordCount">
+      <soap:operation soapAction="http://tempuri.org/LanguageBooster/GetWordCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LanguageBoosterImplementation">
+    <wsdl:port name="BasicHttpBinding_LanguageBooster" binding="tns:BasicHttpBinding_LanguageBooster">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/LanguageBoosterService/Service1/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,9 @@
+﻿<Application x:Class="LanguageBoosterEditor.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:myApp="clr-namespace:LanguageBoosterEditor"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <CollectionViewSource x:Key="words" Source="{x:Static myApp:WordManager.Words}"/>
+    </Application.Resources>
+</Application>
