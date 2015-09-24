@@ -5,15 +5,15 @@ In this file you can find the licensing information about the used artworks, med
 
 Backgrounds
 -----------
-* **01.png**
+* **01.jpg**
   * Source: [Source](https://commons.wikimedia.org/wiki/File:Space_Galaxy_Spaceship.png)
   * Creator: Dmytro Ivashchenko
   * Original: Space Galaxy Spaceship.png
   *  License: Creative Commons Attribution-Share Alike 4.0 International
-* **02.png**-  
+* **02.jpg**
   * Source: [Source](https://www.pexels.com/search/space/)
   * License: Creative Commons Zero (CC0) license
-* **03.png**-  
+* **03.jpg**
   * Source: [Source](https://www.pexels.com/search/universe/)
   * License: Creative Commons Zero (CC0) license
 * **04.jpg**
@@ -26,7 +26,8 @@ Backgrounds
 
 Music
 -----
- * Track: 04. Control Alt Deus - Control (05:15)
+* **Control_Alt_Deus_-_04_-_Control.mp3**
+   * Track: 04. Control Alt Deus - Control (05:15)
    * Album: This is Industrial [PT]
    * Source: http://freemusicarchive.org/ [Link](http://freemusicarchive.org/music/Various_Artists_Enough_Records/This_is_Industrial_PT)
    * License:Attribution-NonCommercial-ShareAlike 4.0 International [Link](http://creativecommons.org/licenses/by-nc-sa/4.0/)
