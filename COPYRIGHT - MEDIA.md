@@ -23,3 +23,11 @@ Backgrounds
 * **05.jpg**
   * Source: [Source](https://www.flickr.com/photos/gsfc/4598317299)
   * License:  Creative Commons Attribution 2.0
+
+Music
+-----
+ * Track: 04. Control Alt Deus - Control (05:15)
+   * Album: This is Industrial [PT]
+   * Source: http://freemusicarchive.org/ [Link](http://freemusicarchive.org/music/Various_Artists_Enough_Records/This_is_Industrial_PT)
+   * License:Attribution-NonCommercial-ShareAlike 4.0 International [Link](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+ 
