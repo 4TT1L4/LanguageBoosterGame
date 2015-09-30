@@ -81,6 +81,7 @@ namespace LanguageBoosterGame
         {
             
             System.Diagnostics.Trace.WriteLine(e.Key.ToString());
+            this.CheckCheatCode(e);
 
             if (GameInstance != null)
             {
@@ -132,6 +133,22 @@ namespace LanguageBoosterGame
                         }
                     }
                 }
+            }
+        }
+
+        private string cheatCode = "              ";
+
+        private void CheckCheatCode(KeyEventArgs e)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append(cheatCode.Substring(1, cheatCode.Length - 1));
+            builder.Append(e.Key.ToString()[0]);
+            cheatCode = builder.ToString();
+
+            if(cheatCode.Contains("IDDQD"))
+            {
+                this.GameInstance.addAmmo(1000);
+                cheatCode = "              ";
             }
         }
     }

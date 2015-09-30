@@ -264,8 +264,6 @@ namespace LanguageBoosterGame
                     }
                 }
 
-
-
                 // Remove far lasers & Dead enemies
                 foreach (var item in ToRemove)
                 {
@@ -411,6 +409,11 @@ namespace LanguageBoosterGame
                 return GameOver;
             }
 
+        }
+
+        public void addAmmo(int ammoCount)
+        {
+            this.LaserAmmoCount += ammoCount;
         }
 
         internal void ShootLaser()
