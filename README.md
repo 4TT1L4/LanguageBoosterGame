@@ -3,7 +3,7 @@ The LanguageBooster game is a Space Invaders remake, I made for language learner
 
 A short in-game video can be found on the YouTube: [Link](https://www.youtube.com/watch?v=Sqd_w14mmiY)
 
-[![Everything Is AWESOME](https://github.com/BujakiAttila/LanguageBoosterGame/blob/master/snapshot.jpg?raw=true)](https://www.youtube.com/watch?v=Sqd_w14mmiY)
+[![Everything Is AWESOME](https://github.com/BujakiAttila/LanguageBoosterGame/blob/master/snapshot.jpg?raw=true "YouTube video - Click to Watch!")](https://www.youtube.com/watch?v=Sqd_w14mmiY)
 
 # License
 The game is licensed under: GNU Affero General Public License v3 (AGPL-3.0)
