@@ -7,7 +7,7 @@ The LanguageBooster game is a Space Invaders remake, specially made for language
 
 # Preview Video on YouTube
 
-A short in-game video can be found on the YouTube (offers higher quality):
+A [short in-game video can be found on the YouTube](https://www.youtube.com/watch?v=Sqd_w14mmiY) (offers higher quality):
 
 [![YouTube Video about the Language Booster Game](https://github.com/BujakiAttila/LanguageBoosterGame/blob/master/snapshot.jpg?raw=true "YouTube video - Click to Watch!")](https://www.youtube.com/watch?v=Sqd_w14mmiY)
 
